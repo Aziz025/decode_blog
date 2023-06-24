@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+    <title>Decode blog</title>
+</head>
+<body>
+    <%-include('partials/header.ejs')%>
+
+    <div class="container">
+        <div class="main">
+            <div class="main-content">
+                <h2>Блоги по программированию</h2>
+                <div class="main-card">
+                    <div class="main-info">
+                        <h4>Популярные и лучшие публикации по программированию для начинающих
+                            и профессиональных программистов и IT-специалистов.</h4>
+                        <div class="main-img">
+                            <img src="/images/main1.jpg" alt="">
+                        </div>
+                        <h3>Обзор Report Manager от Webix</h3>
+                        <p>Осень 2020 года стала плодотворным временем для специалистов Webix.</p>
+                        <p>Команда Webix выпустила восьмую версию библиотеки пользовательского интерфейса Webix с
+                            двумя новыми комплексными виджетами. Первый - зто Scheduler, о котором мы подробно
+                             говорили ранее. Второй виджет - это Gantt chart в JavaScript. Подробную информацию об этом
+                              виджете Вы можете найти в статье. </p>
+                        <p>Ноябрь продолжает тенденцию, и мы спешим поделиться с Вами новым комплексным виджетом Report Manager. Давайте рассмотрим его.</p>      
+                    </div>
+                    <div class="main-icons">
+                        <div class="main-icons-text">
+                            <img src="/images/icons/calendar.jpg" alt="">
+                            26.06.2020
+                        </div>
+                        <div class="main-icons-text">
+                            <img src="/images/icons/eye.jpg" alt="">
+                            21
+                        </div>
+                        <div class="main-icons-text">
+                            <img src="/images/icons/shape.jpg" alt="">
+                            4
+                        </div>
+                        <div class="main-icons-text">
+                            <i class="fa-sharp fa-solid fa-message" style="color: #757575;"></i>
+                            Веб-разработка
+                        </div>
+                        <div class="main-icons-text">
+                            <img src="/images/icons/vector.jpg" alt="">
+                            Nast1289
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="main-card">
+                    <div class="main-info">
+                        <div class="main-img">
+                            <img src="/images/main2.jpg" alt="">
+                        </div>
+                        <h3>Разработчики изобрели методологию высокоскоростного программирования</h3>
+                        <p>Осень 2020 года стала плодотворным временем для специалистов Webix.</p>
+                        <p>Команда Webix выпустила восьмую версию библиотеки пользовательского интерфейса Webix с
+                            двумя новыми комплексными виджетами. Первый - зто Scheduler, о котором мы подробно
+                             говорили ранее. Второй виджет - это Gantt chart в JavaScript. Подробную информацию об этом
+                              виджете Вы можете найти в статье. </p>
+                        <p>Ноябрь продолжает тенденцию, и мы спешим поделиться с Вами новым комплексным виджетом Report Manager. Давайте рассмотрим его.</p>      
+                    </div>
+                    <div class="main-icons">
+                        <div class="main-icons-text">
+                            <img src="/images/icons/calendar.jpg" alt="">
+                            26.06.2020
+                        </div>
+                        <div class="main-icons-text">
+                            <img src="/images/icons/eye.jpg" alt="">
+                            21
+                        </div>
+                        <div class="main-icons-text">
+                            <img src="/images/icons/shape.jpg" alt="">
+                            4
+                        </div>
+                        <div class="main-icons-text">
+                            <i class="fa-sharp fa-solid fa-message" style="color: #757575;"></i>
+                            Веб-разработка
+                        </div>
+                        <div class="main-icons-text">
+                            <img src="/images/icons/vector.jpg" alt="">
+                            Nast1289
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="categories">
+            <h3>Категории</h3>
+            <% genres.forEach(genre => {%>
+                <a href="/<%=genre.key%>"><%=genre.name%></a>
+            <%}) %>  
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.comment{
+    margin-left: 50px;
+}
+
+.comment h3{
+    color: #000;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.comment-img{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.comment-img img{
+    width: 10%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.comment-img h3{
+    font-size: 24px;
+    color: #000;
+    font-weight: 400;
+}
+
+.comment fieldset{
+    margin-top: 20px;
+}
+
+.comment .fieldset input{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.comment .fieldset button{
+    width: 20%;
+}

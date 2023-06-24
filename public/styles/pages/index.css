@@ -1,0 +1,102 @@
+.main{
+    padding: 20px 40px 50px;
+    background-color: #fff;
+    min-height: 75vh;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.categories{
+    width: 20%;
+    border: 3px solid rgba(31, 31, 31, .05);
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-left: 10px;
+    height: fit-content;
+}
+
+.categories h3{
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.categories a{
+    text-decoration: none;
+    color: #007BFF;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(31, 31, 31, .1);
+}
+
+.main-content{
+    width: 100%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+
+.main-card{
+    padding: 20px;
+}
+
+.main-content h2{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+.main-img{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.main-img img{
+    width: 100%;
+}
+
+
+.main-info h4 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+}   
+
+.main-info h3{
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.main-info p{
+    margin-bottom: 20px;
+}
+
+.main-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.main-icons-text img{
+    width: 13px;
+    margin-right: 5px;
+}
+
+.main-icons-text i{
+    width: 13px;
+    margin-right: 5px;
+}
+
+.main-icons-text{
+    margin-right: 50px;
+}
