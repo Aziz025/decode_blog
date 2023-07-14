@@ -15,7 +15,20 @@
         </div>
     </div>
     <div class="head-button">
-        <a href="/register">Регистрация</a>
-        <a href="/login">Вход</a>
+        <%
+            if(user._id){
+        %>
+            <a href="/profile">
+                <img src="/images/profile.jpg" alt="">
+            </a>
+        <%
+            }else{
+        %>
+            <a href="/register">Регистрация</a>
+            <a href="/login">Вход</a>
+        <%    
+            }
+        %>        
+
     </div>
 </header>

@@ -31,6 +31,10 @@ const signUp = async (req, res) => {
     }
 }
 
+const signIn = (req , res) => {
+    res.redirect(`/profile/${req.user._id}`)
+}
 module.exports = {
-    signUp
+    signUp,
+    signIn
 }

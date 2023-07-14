@@ -5,6 +5,6 @@ const writeDataGenre = require('./seed')
 
 writeDataGenre()
 
-router.get('/api/genre' , getAllGenres)
+router.get('/api/genres' , getAllGenres)
 
 module.exports = router

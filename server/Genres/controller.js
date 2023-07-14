@@ -1,4 +1,4 @@
-const Genres = require('./genres')
+const Genres = require('../Genres')
 
 const getAllGenres = async(req , res) => {
     const data = await Genres.find()
