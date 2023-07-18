@@ -1,14 +1,20 @@
 const express = require('express')
 const router = express.Router()
-const Genres = require('../genres/genres')
+const Genres = require('../Genres/genre')
+const User = require('../auth/User')
 
 router.get('/' , async(req, res) => {
     const allGenres = await Genres.find()
     res.render("index" , {genres: allGenres , user: req.user ? req.user: {}})
 })
 
-router.get('/profile/:id' , (req, res) => {
-    res.render("profile" , {user: req.user ? req.user: {}})
+router.get('/profile/:id' , async(req, res) => {
+    const user = await User.findById(req.params.id)
+    if(user){
+        res.render("profile" , {user: user , user: req.user ? req.user: {} , loginUser: req.user})
+    }else{
+        res.redirect('not-account')
+    }
 })
 
 router.get('/login' , (req, res) => {
@@ -23,12 +29,14 @@ router.get('/addblog' , (req, res) => {
     res.render("addBlog" , {user: req.user ? req.user: {}})
 })
 
-router.get('/comment' , (req, res) => {
-    res.render("comment" , {user: req.user ? req.user: {}})
+router.get('/comment' , async(req, res) => {
+    const allGenres = await Genres.find()
+    res.render("comment" , {genres: allGenres , user: req.user ? req.user: {}})
 })
 
-router.get('/not-account' , (req, res) => {
-    res.render("not-account")
+router.get('/not-account' , async(req, res) => {
+    const allGenres = await Genres.find()
+    res.render("not-account" , {genres: allGenres})
 })
 
 

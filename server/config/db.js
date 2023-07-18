@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.1:27017/kinopoisk').then(() =>{
+mongoose.connect('mongodb://127.0.0.1:27017/decode_blog').then(() =>{
     console.log('connect');
 }).catch((e) =>{
     console.log('faile');

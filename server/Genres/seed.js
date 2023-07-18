@@ -1,4 +1,5 @@
-const Genres = require('../Genres')
+const Genres = require('./genre');
+
 const data = [
     'Прогнозы в IT',
     'Веб-разработка',

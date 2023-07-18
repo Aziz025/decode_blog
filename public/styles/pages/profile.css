@@ -26,14 +26,17 @@
     border-radius: 4px;
     padding: 10px;
 }
+.categories-text a:last-child{
+    background-color: red;
+    width: 65%;
+}
 
 .img-profile{
-    width: 20%;
+    width: 50%;
 }
 
 .img-profile img{
-    width: 20%;
-    margin-left: 100px;
+    width: 25%;
 }
 
 .newBlog{

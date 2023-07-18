@@ -34,7 +34,18 @@ const signUp = async (req, res) => {
 const signIn = (req , res) => {
     res.redirect(`/profile/${req.user._id}`)
 }
+
+const signOut = (req , res) => {
+    req.logout(function(err){
+        if(err){
+            console.log(err);
+        }
+    })
+    res.redirect('/')
+}
+
 module.exports = {
     signUp,
-    signIn
+    signIn,
+    signOut
 }

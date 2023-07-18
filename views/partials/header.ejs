@@ -18,17 +18,20 @@
         <%
             if(user._id){
         %>
-            <a href="/profile">
-                <img src="/images/profile.jpg" alt="">
-            </a>
+            <div class=" img-profile">
+                <a href="/profile/<%=user._id%>">
+                    <img src="/images/profile.jpg" alt="">
+                </a>
+            </div>
         <%
             }else{
         %>
-            <a href="/register">Регистрация</a>
-            <a href="/login">Вход</a>
+            <div class="bac-col">
+                <a href="/register">Регистрация</a>
+                <a href="/login">Вход</a>
+            </div>    
         <%    
             }
         %>        
-
     </div>
 </header>

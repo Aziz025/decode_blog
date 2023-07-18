@@ -5,14 +5,14 @@
     <title>Decode blog</title>
 </head>
 <body>
-    <%-include('partials/headerProfile.ejs')%>
+    <%-include('partials/header.ejs')%>
 
     <div class="container">
         <div class="main">
             <div class="main-content">
                 <div class="newBlog">
                     <h2>Мои блоги</h2>
-                    <a href="">Новый блог</a>
+                    <a href="/addblog">Новый блог</a>
                 </div>
                 <div class="main-card">
                     <div class="main-info">
@@ -101,10 +101,17 @@
         <div class="categories">
             <div class="categories-text">
                 <img src="/images/profile.jpg" alt="">
-                <p><%=user.full_name%>></p>
+                <p><%=user.full_name%></p>
                 <p>В основном пишу про веб - разработку, на React & Redux</p>
-                <p>285 постов за все время</p>
+                <p>285 постов за все время</p>  
+                <%
+                    if(loginUser.id == user.id){
+                %>
                 <a href="">Редактировать</a>
+                <a href="/api/signout">Выход</a>
+                <%        
+                    }
+                %>
             </div>
         </div>
     </div>

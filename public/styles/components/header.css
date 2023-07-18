@@ -74,16 +74,16 @@ header{
 }
 
 .head-button a{
-    background-color: #00A2DC;
     text-decoration: none;
+    background-color: #00A2DC;
     color: #fff;
     border-radius: 4px;
 }
 
-.head-button a:first-child{
-    padding: 15px;
+.bac-col a:first-child{ 
+    padding: 12px;
 }
 
-.head-button a:last-child{
-    padding: 15px 25px;  
+.bac-col a:last-child{
+    padding: 12px 25px;  
 }
