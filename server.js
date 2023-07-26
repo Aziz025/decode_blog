@@ -25,9 +25,7 @@ app.set("view engine" , "ejs")
 app.use(require('./server/pages/router'))
 app.use(require('./server/Genres/router'))
 app.use(require('./server/auth/router'))
-
-
-
+app.use(require('./server/Blogs/router'))
 
 const PORT = 5000;
 app.listen(PORT , ()  =>  {

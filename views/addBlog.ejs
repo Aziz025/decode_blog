@@ -9,7 +9,7 @@
     
     <div class="addblog">
         <div class="addblog-content">   
-            <form action="" class="form">
+            <form action="/api/addBlog" method="POST" class="form" enctype="multipart/form-data">
                 <h3>Новый блог</h3>
                 <fieldset class="fieldset">
                     <input type="title" placeholder="Введите заголовок блога" name="title">
@@ -18,16 +18,13 @@
                     <div class="select-wrapper">
                         <select name="category" id="categorySelect">
                             <option value="" disabled selected>Выберите категорию</option>
-                            <option value="Веб-разработка">Прогнозы в IT</option>
-                            <option value="Библиотека">Веб-разработка</option>
-                            <option value="Фреймворк">Мобильная разработка</option>
-                            <option value="Фреймворк">Фриланс</option>
-                            <option value="Фреймворк">Алгоритмы</option>
-                            <option value="Фреймворк">Тестирование IT систем</option>
-                            <option value="Фреймворк">Разработка игр</option>
-                            <option value="Фреймворк">Дизайн и юзабилити</option>
-                            <option value="Фреймворк">Искуственный интелект</option>
-                            <option value="Фреймворк">Машинное обучение</option>
+                            <% 
+                                genres.forEach(genre => {
+                            %>
+                                    <option value="<%=genre._id%>"><%=genre.name%></option>
+                            <%
+                                }) 
+                            %>  
                         </select>
                     </div>
                 </fieldset>

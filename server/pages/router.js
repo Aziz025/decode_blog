@@ -25,8 +25,9 @@ router.get('/register' , (req, res) => {
     res.render("register" , {user: req.user ? req.user: {}})
 })
 
-router.get('/addblog' , (req, res) => {
-    res.render("addBlog" , {user: req.user ? req.user: {}})
+router.get('/addblog' , async(req, res) => {
+    const allGenres = await Genres.find()
+    res.render("addBlog" , {user: req.user ? req.user: {}, genres: allGenres})
 })
 
 router.get('/comment' , async(req, res) => {
