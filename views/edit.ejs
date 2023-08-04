@@ -9,20 +9,28 @@
     
     <div class="addblog">
         <div class="addblog-content">   
-            <form action="/api/addBlog" method="POST" class="form" enctype="multipart/form-data">
-                <h3>Новый блог</h3>
+            <form action="/api/edit" method="POST" class="form" enctype="multipart/form-data">
+                <h3>Редактировать блог</h3>
+                <fieldset>
+                    <input type="hidden" value="<%=blog._id%>" name="id">
+                </fieldset>
                 <fieldset class="fieldset">
-                    <input type="title" placeholder="Введите заголовок блога" name="title">
+                    <input type="title" value="<%=blog.title%>" placeholder="Введите заголовок блога" name="title">
                 </fieldset>
                 <fieldset class="fieldset">
                     <div class="select-wrapper">
                         <select name="category" id="categorySelect">
-                            <option value="" disabled selected>Выберите категорию</option>
                             <% 
                                 genres.forEach(genre => {
+                                    if(genre.id == blog.genre){
                             %>
-                                    <option value="<%=genre._id%>"><%=genre.name%></option>
+                                        <option value="<%=genre._id%>" selected><%=genre.name%></option>
                             <%
+                                    }else{
+                            %>
+                                        <option value="<%=genre._id%>"><%=genre.name%></option>
+                            <%
+                                    }
                                 }) 
                             %>  
                         </select>
@@ -33,14 +41,14 @@
                     <input type="file" id="imageInput" name="image" style="display: none;">
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input type="description" placeholder="Введите описание блога" name="description">
+                    <input type="description" value="<%=blog.description%>" placeholder="Введите описание блога" name="description">
                 </fieldset>
                 <fieldset class="fieldset">
-                <button type="submit">Создать</button>
+                <button type="submit">Сохранить</button>
                 </fieldset>
             </form>
         </div>
     </div>
-<script src="/js/select.js"></script>
+<script src="/select.js"></script>
 </body>
 </html>

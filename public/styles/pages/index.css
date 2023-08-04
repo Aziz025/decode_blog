@@ -42,6 +42,10 @@
     box-sizing: border-box;
 }
 
+.main-content h4{
+    text-align: center;
+}
+
 .main-card{
     padding: 20px;
 }
@@ -99,4 +103,9 @@
 
 .main-icons-text{
     margin-right: 50px;
+}
+
+.main-icons-text a{
+    text-decoration: none;
+    color: #757575;
 }
