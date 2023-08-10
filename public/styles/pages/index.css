@@ -109,3 +109,18 @@
     text-decoration: none;
     color: #757575;
 }
+
+.pages{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pages a{
+    background-color: #007BFF;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}

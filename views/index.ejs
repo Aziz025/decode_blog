@@ -13,44 +13,56 @@
                 <h2>Блоги по программированию</h2>
                 <h4>Популярные и лучшие публикации по программированию для начинающих
                     и профессиональных программистов и IT-специалистов.</h4>
-
                 <%
                     blogs.forEach(item => {
                 %>
                     <div class="main-card">
-                    <div class="main-info">
-                        <div class="main-img">
-                            <img src="<%=item.image%>" alt="">
+                        <div class="main-info">
+                            <div class="main-img">
+                                <img src="<%=item.image%>" alt="">
+                            </div>
+                            <h3><%=item.title%></h3>
+                            <p><%=item.description%></p>  
                         </div>
-                        <h3><%=item.title%></h3>
-                        <p><%=item.description%></p>  
-                    </div>
-                    <div class="main-icons">
-                        <div class="main-icons-text">
-                            <img src="/images/icons/calendar.jpg" alt="">
-                            26.06.2020
+                        <div class="main-icons">
+                            <div class="main-icons-text">
+                                <img src="/images/icons/calendar.jpg" alt="">
+                                26.06.2020
+                            </div>
+                            <div class="main-icons-text">
+                                <img src="/images/icons/eye.jpg" alt="">
+                                21
+                            </div>
+                            <div class="main-icons-text">
+                                <a href="/comment/<%=item._id%>"><img src="/images/icons/shape.jpg" alt="">
+                                    4</a>
+                            </div>
+                            <div class="main-icons-text">
+                                <i class="fa-sharp fa-solid fa-message" style="color: #757575;"></i>
+                                <%=item.category.name%>
+                            </div>
+                            <div class="main-icons-text">
+                                <img src="/images/icons/vector.jpg" alt="">
+                                <a href=""><%=item.author.full_name%></a>
+                            </div>
                         </div>
-                        <div class="main-icons-text">
-                            <img src="/images/icons/eye.jpg" alt="">
-                            21
-                        </div>
-                        <div class="main-icons-text">
-                            <img src="/images/icons/shape.jpg" alt="">
-                            4
-                        </div>
-                        <div class="main-icons-text">
-                            <i class="fa-sharp fa-solid fa-message" style="color: #757575;"></i>
-                            <%=item.category.name%>
-                        </div>
-                        <div class="main-icons-text">
-                            <img src="/images/icons/vector.jpg" alt="">
-                            <a href=""><%=item.author.full_name%></a>
-                        </div>
-                    </div>
                     </div>
                 <%        
                     })
                 %>
+                <div class="pages">
+                    <%
+                        let localsString = ''
+                        if(locals.category){
+                            localsString = `category=${locals.category}&`
+                        }
+                        for(let i = 0; i < pages; i++){
+                    %>
+                            <a href="?<%=localsString%>page=<%=i%>"><%=i + 1%></a>
+                    <%
+                        }
+                    %>
+                </div>
             </div>
         </div>
         
@@ -59,7 +71,7 @@
             <% 
                 genres.forEach(genre => {
             %>
-                <a href="/<%=genre.key%>"><%=genre.name%></a>
+                <a href="?category=<%=genre.key%>"><%=genre.name%></a>
             <%
                 }) 
             %>  

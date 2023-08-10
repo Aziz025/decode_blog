@@ -11,65 +11,65 @@
         <div class="main">
             <div class="main-content">
                 <h2>Блоги по программированию</h2>
-                <div class="main-card">
-                    <div class="main-info">
-                        <h4>Популярные и лучшие публикации по программированию для начинающих
-                            и профессиональных программистов и IT-специалистов.</h4>
-                        <div class="main-img">
-                            <img src="/images/main1.jpg" alt="">
+                <%
+                    blogs.forEach(comment => {
+                %>
+                    <div class="main-card">
+                        <div class="main-info">
+                            <div class="main-img">
+                                <img src="<%=comment.image%>" alt="">
+                            </div>
+                            <div class="button-more">
+                                <h3><%=comment.title%></h3>
+                            </div>
+                            <p><%=comment.description%></p>    
                         </div>
-                        <div class="button-more">
-                            <h3>Обзор Report Manager от Webix</h3>
-                            <i class="fa-solid fa-ellipsis-vertical">Еще</i>
-                            <div class="options">
-                                <a href="#">Редактировать</a>
-                                <button class="delete">Удалить</button>
+                        <div class="main-icons">
+                            <div class="main-icons-text">
+                                <img src="/images/icons/calendar.jpg" alt="">
+                                26.06.2020
+                            </div>
+                            <div class="main-icons-text">
+                                <img src="/images/icons/eye.jpg" alt="">
+                                21
+                            </div>
+                            <div class="main-icons-text">
+                                <img src="/images/icons/shape.jpg" alt="">
+                                4
+                            </div>
+                            <div class="main-icons-text">
+                                <i class="fa-sharp fa-solid fa-message" style="color: #757575;"></i>
+                                <%=comment.category.name%>
+                            </div>
+                            <div class="main-icons-text">
+                                <img src="/images/icons/vector.jpg" alt="">
+                                <a href=""><%=comment.author.full_name%></a>
                             </div>
                         </div>
-                        <p>Осень 2020 года стала плодотворным временем для специалистов Webix.</p>
-                        <p>Команда Webix выпустила восьмую версию библиотеки пользовательского интерфейса Webix с
-                            двумя новыми комплексными виджетами. Первый - зто Scheduler, о котором мы подробно
-                             говорили ранее. Второй виджет - это Gantt chart в JavaScript. Подробную информацию об этом
-                              виджете Вы можете найти в статье. </p>
-                        <p>Ноябрь продолжает тенденцию, и мы спешим поделиться с Вами новым комплексным виджетом Report Manager. Давайте рассмотрим его.</p>      
                     </div>
-                    
-                </div>
-            </div>
-            <div class="main-content">
-                <div class="main-card">
-                    <div class="main-info">
-                        <h3>Что такое комплексные виджеты Webix?</h3>
-                        <p>В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.</p>
-                        <p>Они уже готовы к интеграции в Ваше бизнес-приложение, что позволяет экономить рабочее время программистам. Это визуальное воплощение концепции low-code платформы, которой является Webix. Комплексные виджеты Webix сразу же готовы к работе, потому что они содержат функциональный фронт-энд слой и, при необходимости, снабжены различными опциями для бэк-энда. </p>
-                        <p>Гибкая архитектура Webix позволяет легко настраивать эти приложения, расширять их функциональность и интегрировать в существующие решения.</p>      
-                    </div>
-                </div>
+                <%        
+                    })
+                %>
             </div>
             <div class="comment">
-                <h3>2 комментария</h3>
-                <div class="comment-info">
-                    <div class="comment-img">
-                        <img src="/images/profile.jpg" alt="">
-                        <h3>Сеналов Азиз</h3>
-                    </div>
-                    <p>В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.
-                    </p>
-                </div>
-                <div class="comment-info">
-                    <div class="comment-img">
-                        <img src="/images/profile.jpg" alt="">
-                        <h3>Сеналов Азиз</h3>
-                    </div>
-                    <p>В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.
-                    </p>
-                </div>
-                <fieldset class="fieldset">
-                    <input type="description" placeholder="Введите текст комментария" name="description">
-                </fieldset>
-                <fieldset class="fieldset">
+                <% 
+                    if(user && user._Id){
+                %>
+                <h3>Комментарии</h3>
+                <form action="">
+                    <textarea name="text"></textarea>
                     <button type="submit">Отправить</button>
-                </fieldset>
+                </form>
+                <%
+                    }else{
+                %>
+                    <p>
+                        <a href="/login">Войдите</a> или
+                        <a href="/register">зарегистрируйтесь</a>, что бы оставить комментарий
+                    </p>
+                <%
+                    }
+                %>
             </div>
         </div>
         

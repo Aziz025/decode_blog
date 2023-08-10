@@ -26,15 +26,23 @@
     font-weight: 400;
 }
 
-.comment fieldset{
+.comment form{
     margin-top: 20px;
 }
 
-.comment .fieldset input{
+.comment form textarea{
     width: 100%;
     padding-bottom: 50px;
 }
 
-.comment .fieldset button{
-    width: 20%;
+.comment button{
+    background-color: #00A2DC;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;  
+    margin-top: 7px; 
+    border: 1px solid #00A2DC;
+    border-radius: 5px;
+    cursor: pointer;
 }

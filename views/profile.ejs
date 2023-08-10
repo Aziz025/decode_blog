@@ -18,42 +18,42 @@
                     blogs.forEach(item => {
                 %>
                     <div class="main-card">
-                    <div class="main-info">
-                        <div class="main-img">
-                            <img src="<%=item.image%>" alt="">
+                        <div class="main-info">
+                            <div class="main-img">
+                                <img src="<%=item.image%>" alt="">
+                            </div>
+                            <div class="button-more">
+                                <h3><%=item.title%></h3>
+                                <i class="fa-solid fa-ellipsis-vertical">Еще</i>
+                                <div class="options">
+                                    <a href="/edit/<%=item._id%>">Редактировать</a>
+                                    <a href="" onclick="deleteBlogs('<%=item._id%>' , '<%=item.author._id%>')" class="delete">Удалить</a>
+                                </div>
+                            </div>
+                            <p><%=item.description%></p>    
                         </div>
-                        <div class="button-more">
-                            <h3><%=item.title%></h3>
-                            <i class="fa-solid fa-ellipsis-vertical">Еще</i>
-                            <div class="options">
-                                <a href="/edit/<%=item._id%>">Редактировать</a>
-                                <a href="" onclick="deleteBlogs('<%=item._id%>' , '<%=item.author._id%>')" class="delete">Удалить</a>
+                        <div class="main-icons">
+                            <div class="main-icons-text">
+                                <img src="/images/icons/calendar.jpg" alt="">
+                                26.06.2020
+                            </div>
+                            <div class="main-icons-text">
+                                <img src="/images/icons/eye.jpg" alt="">
+                                21
+                            </div>
+                            <div class="main-icons-text">
+                                <a href="/comment/<%=item._id%>"><img src="/images/icons/shape.jpg" alt="">
+                                    4</a>
+                            </div>
+                            <div class="main-icons-text">
+                                <i class="fa-sharp fa-solid fa-message" style="color: #757575;"></i>
+                                <%=item.category.name%>
+                            </div>
+                            <div class="main-icons-text">
+                                <img src="/images/icons/vector.jpg" alt="">
+                                <a href=""><%=item.author.full_name%></a>
                             </div>
                         </div>
-                        <p><%=item.description%></p>    
-                    </div>
-                    <div class="main-icons">
-                        <div class="main-icons-text">
-                            <img src="/images/icons/calendar.jpg" alt="">
-                            26.06.2020
-                        </div>
-                        <div class="main-icons-text">
-                            <img src="/images/icons/eye.jpg" alt="">
-                            21
-                        </div>
-                        <div class="main-icons-text">
-                            <img src="/images/icons/shape.jpg" alt="">
-                            4
-                        </div>
-                        <div class="main-icons-text">
-                            <i class="fa-sharp fa-solid fa-message" style="color: #757575;"></i>
-                            <%=item.category.name%>
-                        </div>
-                        <div class="main-icons-text">
-                            <img src="/images/icons/vector.jpg" alt="">
-                            <a href=""><%=item.author.full_name%></a>
-                        </div>
-                    </div>
                     </div>
                 <%        
                     })
