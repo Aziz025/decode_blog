@@ -8,6 +8,7 @@ require('./server/config/passport')
 
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded())
+app.use(express.json())
 app.use (session({
     name: 'decode_blog.session',
     secret: 'keybord cat',
@@ -26,6 +27,7 @@ app.use(require('./server/pages/router'))
 app.use(require('./server/Genres/router'))
 app.use(require('./server/auth/router'))
 app.use(require('./server/Blogs/router'))
+app.use(require('./server/comment/router'))
 
 const PORT = 5000;
 app.listen(PORT , ()  =>  {

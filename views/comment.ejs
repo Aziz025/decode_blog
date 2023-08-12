@@ -53,11 +53,13 @@
             </div>
             <div class="comment">
                 <% 
-                    if(user && user._Id){
+                    if(user && user._id){
                 %>
                 <h3>Комментарии</h3>
-                <form action="">
-                    <textarea name="text"></textarea>
+                <form onSubmit="sendComment(event)">
+                    <textarea id="comment-text"></textarea>
+                    <input type="hidden" value="<%=user._id%>" id="comment_author">
+                    <input type="hidden" value="<%=comment._id%>" id="comment_blog">
                     <button type="submit">Отправить</button>
                 </form>
                 <%
@@ -85,5 +87,6 @@
         </div>
     </div>
 <script src="/profile.js"></script>
+<script src="/js/comment.js"></script>
 </body>
 </html>
