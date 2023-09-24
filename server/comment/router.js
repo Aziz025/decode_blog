@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router();
-// const {getAllGenres} = require('./controller')
+const {createComment} = require('./controller')
 
 
-router.post('/api/comment')
+router.post('/api/comment', createComment)
 
 module.exports = router

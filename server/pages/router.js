@@ -3,6 +3,7 @@ const router = express.Router()
 const Genres = require('../Genres/genre')
 const User = require('../auth/User')
 const Blog = require('../Blogs/blog')
+const Comment = require('../comment/comment')
 
 router.get('/' , async(req, res) => {
     const options = {}
@@ -52,10 +53,11 @@ router.get('/edit/:id' , async(req, res) => {
 })
 
 router.get('/comment/:id' , async(req, res) => {
-    const user = await User.findById(req.params.id)
-    const blogs = await Blog.find().populate('category').populate('author')
+    const comments = await Comment.find({blogId: req.params.id})
+    console.log(comments);
+    const blog = await Blog.findById(req.params.id).populate('category').populate('author')
     const allGenres = await Genres.find()
-    res.render("comment" , {user: user , user: req.user ? req.user: {} , genres: allGenres , loginUser: req.user , blogs: blogs})
+    res.render("comment" , {user: req.user ? req.user: {} , genres: allGenres , loginUser: req.user , blog: blog, comments})
 })
 
 router.get('/not-account' , async(req, res) => {
